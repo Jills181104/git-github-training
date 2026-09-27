@@ -12,6 +12,16 @@ We have `dev` branch in which developer directly pushes the code and this change
 
 A branch in GitHub is a separate version of a repository where you can work on changes without affecting the main code.
 
+## Pull Request:
+A Pull Request is used to request that changes from one branch be merged into another branch.
+
+It is commonly used when:
+- Working on someone else's repository
+- Collaborating with a team
+- The target branch is protected and requires a PR
+
+If we have permission and the branch is not protected, we can merge a branch directly without creating a Pull Request.
+
 ## Commands for creating and working with branches
 
 1\. `git branch <NAME>`
