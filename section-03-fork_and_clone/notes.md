@@ -70,4 +70,8 @@ This will unstage the changes and we should execute again `git checkout -- <file
 
 `git reset --hard HEAD~1`
 
-This will remove the latest commit and moves HEAD by one commit.
+This will remove the latest commit and moves HEAD by one commit locally.
+
+`git push --force-with-lease origin main`
+
+This will push the changes so that last commit is removed from GitHub
