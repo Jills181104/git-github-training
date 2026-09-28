@@ -39,3 +39,24 @@ If we have permission and the branch is not protected, we can merge a branch dir
 4\. `git branch -d <NAME>`
 
    Deletes the specified branch.
+
+5\. `git checkout --track origin/test`
+
+   Creates a new local test branch that tracks the remote origin/test branch.
+
+6\. `git log --graph`
+
+   Displays the commit history as a text-based graph showing branches and merges.
+
+7\. `git merge branch1 branch2`
+
+   First go into that branch which is branch2 then execute merge command this will merge the branches into one, then also remove branch1 for good practices.
+
+## Gitingore
+When there are files which contain sensitive information or some information which we don't want to share we include name of these files in this file and they won't be pushed into github.
+
+There can be multiple .gitingore files accross different folders in local repository.
+
+Format for particular file: /filename 
+Format for whole folder : foldername/
+Format for particular extension files inside folder : foldername/*.txt
