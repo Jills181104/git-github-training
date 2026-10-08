@@ -60,3 +60,97 @@ There can be multiple .gitingore files accross different folders in local reposi
 Format for particular file: /filename 
 Format for whole folder : foldername/
 Format for particular extension files inside folder : foldername/*.txt
+
+## What is Rebase?
+
+Rebase takes the commits from the current branch and reapplies them on top of another branch.
+
+## Basic Rebase
+
+```bash
+git checkout feature
+git rebase main
+
+Replays the commits from feature on top of the latest main.
+
+## Rebase with Remote Branch
+
+```bash
+git fetch origin
+git rebase origin/main
+```
+
+Updates the current branch with the latest changes from the remote `main`.
+
+## Rebase Conflicts
+
+If a conflict occurs during rebase:
+
+```bash
+git status
+```
+
+Resolve the conflict, then:
+
+```bash
+git add FILE_NAME
+git rebase --continue
+```
+
+### Abort Rebase
+
+```bash
+git rebase --abort
+```
+
+Cancels the rebase and returns to the previous state.
+
+### Skip a Commit
+
+```bash
+git rebase --skip
+```
+
+Skips the commit causing the problem.
+
+## Interactive Rebase
+
+Used to clean up or modify recent commits.
+
+```bash
+git rebase -i HEAD~3
+```
+
+Common options:
+
+- `pick` - Keep the commit.
+- `reword` - Change the commit message.
+- `edit` - Modify the commit.
+- `squash` - Combine with the previous commit.
+- `fixup` - Combine without keeping the commit message.
+- `drop` - Remove the commit.
+
+## Rebase vs Merge
+
+### Merge
+Merge creates a separate merge commit.
+
+### Rebase
+
+```text
+C0 ── C1 ── C2 ── C3' ── C4'
+```
+
+Rebase creates a more linear history.
+
+## Important Points
+
+- Rebase changes commit history.
+- Use rebase mainly on your own feature branches.
+- Avoid rebasing shared branches.
+- Interactive rebase is useful for cleaning up commits.
+- After rebasing a previously pushed branch, use:
+
+```bash
+git push --force-with-lease
+```
