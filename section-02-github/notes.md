@@ -43,3 +43,20 @@ Shows the current state of your working directory and branch like how much commi
 
 git pull  
 Fetches and merges the latest changes from the remote repository.
+
+## Git amend
+
+This command is used to modify the most recent commit like add forgotten changes to last commit or update the commit message.
+
+### Change the commit message
+
+``` bash
+git commit --amend -m "Updated message"
+```
+
+### Add forgotten changes
+
+```bash
+git add file.txt
+git commit --amend --no-wait
+```
